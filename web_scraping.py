@@ -23,8 +23,8 @@ chromedriver_path = "chromedriver"
 driver = webdriver.Chrome(chromedriver_path, chrome_options=chrome_options)
 
 cities = [['izmir', "311046", "5417"], ['istanbul', "745044", "5328"], ['antalya', "323777", "5459"],
-          ['zonguldak', "737022", "5306"], ['erzurum', "315368", "5356"], ['konya', "306571", "5432"]]
-city = cities[1]
+          ['zonguldak', "737022", "5306"], ['erzurum', "315368", "5356"], ['konya', "306571", "5432"], ['ankara', '323786', '5377']]
+city = cities[6]
 gid = '?gid=' + city[1]
 station = '&station=' + city[2] + "&date="
 
@@ -74,4 +74,4 @@ data['Bağıl Nem'] = data['Bağıl Nem'].replace({"%": ""}, regex=True)
 cols_to_check = ['Sıcaklık', 'Hissedilir Sıcaklık', 'Çiğ oluşma derecesi']
 data[cols_to_check] = data[cols_to_check].replace({'°C': ''}, regex=True)
 
-data.to_csv(r'istanbul.csv', index=False)
+data.to_csv(r'ankara.csv', index=False)
